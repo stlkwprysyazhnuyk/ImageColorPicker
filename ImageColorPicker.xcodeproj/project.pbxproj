@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		783873C71D76D774000376CC /* ImageColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 783873C61D76D774000376CC /* ImageColorPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		783873D01D76D7DA000376CC /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783873CF1D76D7DA000376CC /* ColorSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		783873C31D76D774000376CC /* ImageColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		783873C61D76D774000376CC /* ImageColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageColorPicker.h; sourceTree = "<group>"; };
 		783873C81D76D774000376CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		783873CF1D76D7DA000376CC /* ColorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		783873C51D76D774000376CC /* ImageColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				783873CF1D76D7DA000376CC /* ColorSelector.swift */,
 				783873C61D76D774000376CC /* ImageColorPicker.h */,
 				783873C81D76D774000376CC /* Info.plist */,
 			);
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783873D01D76D7DA000376CC /* ColorSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +234,7 @@
 		783873CC1D76D774000376CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -240,12 +245,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.steelkiwi.ImageColorPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		783873CD1D76D774000376CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
