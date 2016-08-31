@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		783873C71D76D774000376CC /* ImageColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 783873C61D76D774000376CC /* ImageColorPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		783873D01D76D7DA000376CC /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783873CF1D76D7DA000376CC /* ColorSelector.swift */; };
+		783873D21D76E738000376CC /* ColorNameRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783873D11D76E738000376CC /* ColorNameRecognizer.swift */; };
+		783873D51D76E862000376CC /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 783873D41D76E862000376CC /* colors.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +18,8 @@
 		783873C61D76D774000376CC /* ImageColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageColorPicker.h; sourceTree = "<group>"; };
 		783873C81D76D774000376CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		783873CF1D76D7DA000376CC /* ColorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelector.swift; sourceTree = "<group>"; };
+		783873D11D76E738000376CC /* ColorNameRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorNameRecognizer.swift; sourceTree = "<group>"; };
+		783873D41D76E862000376CC /* colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +52,21 @@
 		783873C51D76D774000376CC /* ImageColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				783873D31D76E850000376CC /* Resources */,
 				783873CF1D76D7DA000376CC /* ColorSelector.swift */,
+				783873D11D76E738000376CC /* ColorNameRecognizer.swift */,
 				783873C61D76D774000376CC /* ImageColorPicker.h */,
 				783873C81D76D774000376CC /* Info.plist */,
 			);
 			path = ImageColorPicker;
+			sourceTree = "<group>";
+		};
+		783873D31D76E850000376CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				783873D41D76E862000376CC /* colors.txt */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783873D51D76E862000376CC /* colors.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				783873D01D76D7DA000376CC /* ColorSelector.swift in Sources */,
+				783873D21D76E738000376CC /* ColorNameRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +255,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ImageColorPicker",
+				);
 				INFOPLIST_FILE = ImageColorPicker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -257,6 +277,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ImageColorPicker",
+				);
 				INFOPLIST_FILE = ImageColorPicker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -285,6 +309,7 @@
 				783873CD1D76D774000376CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
