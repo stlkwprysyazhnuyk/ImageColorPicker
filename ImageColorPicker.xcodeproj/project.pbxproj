@@ -25,6 +25,7 @@
 		783873D01D76D7DA000376CC /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783873CF1D76D7DA000376CC /* ColorSelector.swift */; };
 		783873D21D76E738000376CC /* ColorNameRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783873D11D76E738000376CC /* ColorNameRecognizer.swift */; };
 		783873D51D76E862000376CC /* colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 783873D41D76E862000376CC /* colors.txt */; };
+		78E8E46D1D7EB18300D1F5CC /* PickableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E8E46C1D7EB18300D1F5CC /* PickableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		783873CF1D76D7DA000376CC /* ColorSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelector.swift; sourceTree = "<group>"; };
 		783873D11D76E738000376CC /* ColorNameRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorNameRecognizer.swift; sourceTree = "<group>"; };
 		783873D41D76E862000376CC /* colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
+		78E8E46C1D7EB18300D1F5CC /* PickableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				783873D31D76E850000376CC /* Resources */,
 				783873CF1D76D7DA000376CC /* ColorSelector.swift */,
 				783873D11D76E738000376CC /* ColorNameRecognizer.swift */,
+				78E8E46C1D7EB18300D1F5CC /* PickableImageView.swift */,
 				783873C61D76D774000376CC /* ImageColorPicker.h */,
 				783873C81D76D774000376CC /* Info.plist */,
 			);
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E8E46D1D7EB18300D1F5CC /* PickableImageView.swift in Sources */,
 				783873D01D76D7DA000376CC /* ColorSelector.swift in Sources */,
 				783873D21D76E738000376CC /* ColorNameRecognizer.swift in Sources */,
 			);

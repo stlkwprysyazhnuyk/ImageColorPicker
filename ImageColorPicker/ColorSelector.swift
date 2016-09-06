@@ -8,8 +8,9 @@
 
 import UIKit
 
-public protocol ColorSelectorDelegate {
+@objc public protocol ColorSelectorDelegate {
     func colorCaptured(color: UIColor)
+    optional func colorSelectorMoved()
 }
 
 public class ColorSelector: UIView {
@@ -33,7 +34,7 @@ public class ColorSelector: UIView {
         }
     }
     
-    public func initialize(imageView: UIImageView?, delegate: ColorSelectorDelegate?) {
+    public func setData(imageView: UIImageView?, delegate: ColorSelectorDelegate?) {
         self.image = imageView?.takeSnapshot()
         self.delegate = delegate
         captureColor()
@@ -47,6 +48,7 @@ public class ColorSelector: UIView {
             center = location
             captureColor()
             superview?.endEditing(true)
+            delegate?.colorSelectorMoved?()
         }
     }
     
