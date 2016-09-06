@@ -37,6 +37,16 @@ public class PickableImageView: UIImageView, ColorSelectorDelegate {
         initialize()
     }
     
+    override init(image: UIImage?) {
+        super.init(image: image)
+        initialize()
+    }
+    
+    override init(image: UIImage?, highlightedImage: UIImage?) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        initialize()
+    }
+    
     private func setColorSelectorData() {
         colorSelector.setData(self, delegate: self)
     }

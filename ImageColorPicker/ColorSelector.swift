@@ -16,9 +16,17 @@ import UIKit
 public class ColorSelector: UIView {
     
     @IBInspectable
-    public var border: Bool = true
+    public var borderWidth: CGFloat = 2 {
+        didSet {
+            layer.borderWidth = borderWidth
+        }
+    }
     @IBInspectable
-    public var borderColor: UIColor = UIColor.whiteColor()
+    public var borderColor: UIColor = UIColor.whiteColor() {
+        didSet {
+            layer.borderColor = borderColor.CGColor
+        }
+    }
     
     private var image: UIImage?
     private var delegate: ColorSelectorDelegate?
@@ -28,10 +36,8 @@ public class ColorSelector: UIView {
         super.layoutSubviews()
         layer.cornerRadius = frame.width / 2
         clipsToBounds = true
-        if border {
-            layer.borderWidth = 2
-            layer.borderColor = borderColor.CGColor
-        }
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColor.CGColor
     }
     
     public func setData(imageView: UIImageView?, delegate: ColorSelectorDelegate?) {
