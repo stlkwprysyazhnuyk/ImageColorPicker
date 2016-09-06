@@ -8,21 +8,22 @@
 
 import UIKit
 
-protocol ColorSelectorDelegate {
+public protocol ColorSelectorDelegate {
     func colorCaptured(color: UIColor)
 }
 
-class ColorSelector: UIView {
+public class ColorSelector: UIView {
     
     @IBInspectable
-    var border: Bool = false
+    public var border: Bool = true
     @IBInspectable
-    var borderColor: UIColor = UIColor.whiteColor()
+    public var borderColor: UIColor = UIColor.whiteColor()
     
     private var image: UIImage?
     private var delegate: ColorSelectorDelegate?
+    private var positionConstraintsDeactivated = false
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = frame.width / 2
         clipsToBounds = true
@@ -32,18 +33,31 @@ class ColorSelector: UIView {
         }
     }
     
-    func setData(image: UIImage?, delegate: ColorSelectorDelegate?) {
-        self.image = image
+    public func initialize(imageView: UIImageView?, delegate: ColorSelectorDelegate?) {
+        self.image = imageView?.takeSnapshot()
         self.delegate = delegate
         captureColor()
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.locationInView(superview)
+            disactivatePositionConstraints()
+            translatesAutoresizingMaskIntoConstraints = true
             center = location
             captureColor()
+            superview?.endEditing(true)
         }
+    }
+    
+    private func disactivatePositionConstraints() {
+        guard !positionConstraintsDeactivated, let constraints = superview?.constraints else { return }
+        for constraint in constraints {
+            if constraint.firstItem as! NSObject == self {
+                constraint.active = false
+            }
+        }
+        positionConstraintsDeactivated = true
     }
     
     func captureColor() {
@@ -55,6 +69,17 @@ class ColorSelector: UIView {
                 delegate?.colorCaptured(capturedColor)
             }
         }
+    }
+}
+
+extension UIView {
+    func takeSnapshot() -> UIImage {
+        UIGraphicsBeginImageContext(self.bounds.size);
+        let context = UIGraphicsGetCurrentContext();
+        self.layer.renderInContext(context!)
+        let screenShot = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return screenShot
     }
 }
 

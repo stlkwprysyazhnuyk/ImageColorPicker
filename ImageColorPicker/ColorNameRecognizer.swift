@@ -23,7 +23,7 @@ struct ColorComponent {
     }
 }
 
-class ColorNameRecogniser {
+public class ColorNameRecognizer {
     static let colorsFileName = "colors"
     static let colorsFileExtension = "txt"
     static var colorsNames = [String]()
@@ -55,8 +55,8 @@ class ColorNameRecogniser {
         )
     }
     
-    static func loadColors() {
-        guard let path = NSBundle.mainBundle().pathForResource(colorsFileName, ofType: colorsFileExtension) else {
+    public static func loadColors() {
+        guard let path = NSBundle(forClass: self).pathForResource(colorsFileName, ofType: colorsFileExtension) else {
             fatalError("\(colorsFileName).\(colorsFileExtension) not found")
         }
         colorsComponentsMap.removeAll()
@@ -78,7 +78,7 @@ class ColorNameRecogniser {
         }
     }
     
-    static func getColorName(color: UIColor) -> String {
+    public static func getColorName(color: UIColor) -> String {
         if colorsComponentsMap.count == 0 { loadColors() }
         
         let inputColorComponents = ColorComponent(color: color)
@@ -102,7 +102,7 @@ class ColorNameRecogniser {
         return colorName
     }
     
-    static func getNearColorsNames(colorName: String, count: Int) -> [String] {
+    public static func getNearColorsNames(colorName: String, count: Int) -> [String] {
         var nearColorsNames = [String]()
         guard count > 0 else { fatalError("Count should be greater than 0") }
         if let colorIndex = colorsNames.indexOf(colorName) {
@@ -118,7 +118,7 @@ class ColorNameRecogniser {
         return nearColorsNames
     }
     
-    static func getColor(colorName: String) -> UIColor? {
+    public static func getColor(colorName: String) -> UIColor? {
         guard let colorComponent = colorsComponentsMap[colorName] else { return nil }
         return UIColor(red: colorComponent.red, green: colorComponent.green, blue: colorComponent.blue, alpha: colorComponent.alpha)
     }
