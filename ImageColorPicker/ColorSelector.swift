@@ -32,12 +32,25 @@ public class ColorSelector: UIView {
     private var delegate: ColorSelectorDelegate?
     private var positionConstraintsDeactivated = false
     
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = frame.width / 2
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initialize()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    private func initialize() {
         clipsToBounds = true
         layer.borderWidth = borderWidth
         layer.borderColor = borderColor.CGColor
+    }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.width / 2
     }
     
     public func setData(imageView: UIImageView?, delegate: ColorSelectorDelegate?) {

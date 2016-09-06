@@ -58,10 +58,10 @@ public class PickableImageView: UIImageView, ColorSelectorDelegate {
     
     private func initialize() {
         userInteractionEnabled = true
+        setColorSelectorData()
         setColorSelectorSize()
         colorSelector.center = center
         addSubview(colorSelector)
-        setDataForColorSelector()
     }
     
     public override func layoutSubviews() {
