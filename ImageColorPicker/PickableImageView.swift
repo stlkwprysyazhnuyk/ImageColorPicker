@@ -18,7 +18,7 @@ public class PickableImageView: UIImageView, ColorSelectorDelegate {
     }
     
     private let colorSelector = ColorSelector()
-    public var delegate: ColorSelectorDelegate?
+    public weak var delegate: ColorSelectorDelegate?
     private var didColorSelectorMove = false
     
     public override var image: UIImage? {

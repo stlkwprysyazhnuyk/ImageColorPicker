@@ -29,7 +29,7 @@ public class ColorSelector: UIView {
     }
     
     private var image: UIImage?
-    private var delegate: ColorSelectorDelegate?
+    private weak var delegate: ColorSelectorDelegate?
     private var positionConstraintsDeactivated = false
     
     override init(frame: CGRect) {
