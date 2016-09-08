@@ -11,7 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 78E8E4611D7EA7B600D1F5CC /* Build configuration list for PBXAggregateTarget "AggregateFramework" */;
 			buildPhases = (
-				78E8E4641D7EA7D600D1F5CC /* ShellScript */,
+				78E8E4641D7EA7D600D1F5CC /* Create Universal Framework */,
 			);
 			dependencies = (
 			);
@@ -165,13 +165,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		78E8E4641D7EA7D600D1F5CC /* ShellScript */ = {
+		78E8E4641D7EA7D600D1F5CC /* Create Universal Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Create Universal Framework";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +374,7 @@
 				78E8E4631D7EA7B600D1F5CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
