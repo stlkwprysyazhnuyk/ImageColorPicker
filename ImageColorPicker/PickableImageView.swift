@@ -11,7 +11,7 @@ import UIKit
 public class PickableImageView: UIImageView, ColorSelectorDelegate {
     
     @IBInspectable
-    var size: CGFloat = 40 {
+    public var colorSelectorSize: CGFloat = 64 {
         didSet {
             setColorSelectorSize()
         }
@@ -52,8 +52,8 @@ public class PickableImageView: UIImageView, ColorSelectorDelegate {
     }
     
     private func setColorSelectorSize() {
-        colorSelector.frame.size.width = size
-        colorSelector.frame.size.height = size
+        colorSelector.frame.size.width = colorSelectorSize
+        colorSelector.frame.size.height = colorSelectorSize
     }
     
     private func initialize() {
